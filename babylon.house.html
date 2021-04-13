@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="icon" href="/favicon.ico"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="#000000"/>
+        <meta name="SurafceVue" content="3D real time visualization software for surfaces"/>
+        <meta name="description" content="Visualize Our Products in 3d.">
+        <meta name="url" content="https://moonlajs.github.io/">
+        <meta property="og:title" content="moonlajs">
+        <meta property="og:url" content="https://moonlajs.github.io/">
+        <meta property="og:description" content="Babylon.">
+        <meta property="og:image" content="assets/kitchen1.png">
+        <meta property="og:image:width" content="1440">
+        <meta property="og:image:height" content="1080">
+        <title>Babylon.js sample code</title>
+
+        <!-- Babylon.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+        <script src="https://preview.babylonjs.com/ammo.js"></script>
+        <script src="https://preview.babylonjs.com/cannon.js"></script>
+        <script src="https://preview.babylonjs.com/Oimo.js"></script>
+        <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+        <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+        <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+        <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+        <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+        <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+    </head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+
+        var engine = null;
+        var scene = null;
+        var createDefaultEngine = function() {
+			return new BABYLON.Engine(canvas, true, 
+			{ preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false});
+		};
+        const createScene = function () {
+    
+			const scene = new BABYLON.Scene(engine);
+
+			const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
+			camera.attachControl(canvas, true);
+			const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+
+			BABYLON.SceneLoader.ImportMeshAsync("semi_house", "https://assets.babylonjs.com/meshes/", "both_houses_scene.babylon");
+
+			return scene;
+		};
+             
+	  var  initFunction = async function() {               
+			var asyncEngineCreation = async function() {
+				try {
+				return createDefaultEngine();
+				} catch(e) {
+				console.log("the available createEngine function failed. Creating the default engine instead");
+				return createDefaultEngine();
+				}
+			}
+
+		engine = await asyncEngineCreation();
+        if (!engine) throw 'engine should not be null.';
+        scene = createScene();
+		};
+        initFunction().then(() => {
+            engine.runRenderLoop(function () {
+                if (scene && scene.activeCamera) {
+                    scene.render();
+                }
+            });
+        });
+
+        // Resize
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>
