@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css</title>
+        <meta charset=utf-8>
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+ 
+
+<style>
+
+*{
+font-size:16px
+}
+
+
+
+section{
+display:flex;
+}
+
+
+.code{
+	padding: 20px;
+}
+.outer{
+	width:300px;
+	height:300px;
+	border:1px solid #999
+}
+.inner{
+	width:100px;
+	height:100px;
+	border:1px solid #999
+}
+
+.inner-1{
+	display:block;
+	margin:0 auto;
+}
+
+
+.outer-2{
+	text-align: center;/*  仅对行内元素生效*/
+}
+
+.inner-2{
+	display: inline-block;/*当作行内元素*/
+}
+
+.inner-3{
+	width:fit-content;/*宽度由内容撑开，*/
+	margin:auto;/* 两边自动分配空间*/
+}
+
+.outer-4{
+	display: table-cell;
+	vertical-align:middle;/*定义行内元素的基线相对于该元素所在行的基线的垂直对齐 */
+}
+.outer-5{
+	line-height:300px;
+}
+
+
+.inner-5{
+	line-height:initial;
+	vertical-align:middle;
+	display:inline-block;
+}
+.outer-6::after{
+	content:'4345345';
+	vertical-align:middle;
+	display:inline-block;
+	height:100%;
+}
+.inner-6{
+	vertical-align:middle;
+	display:inline-block
+}
+.outer-7{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.inner-7{
+	
+}
+
+.outer-8{
+	display:grid;
+
+}
+.inner-8{
+	justify-self:center;
+	align-self:center;
+}
+.outer-9{
+	position:relative;
+
+}
+.inner-9{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%)
+}
+.outer-10{
+	position:relative;
+
+}
+.inner-10{
+	position:absolute;
+	left:calc(50% - 50px);
+	top:calc(50% - 50px);
+	
+}
+
+.outer-11{
+	position:relative;
+
+}
+.inner-11{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-50px;
+	margin-top:-50px;
+	
+}
+.outer-12{
+	position:relative;
+
+}
+.inner-12{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	
+}
+
+</style>
+    </head>
+    <body>
+	<section>
+1<div class="outer outer-1">
+  <div class="inner inner-1">
+  水平居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.inner-1{
+	display:block;
+	margin:0 auto;
+}
+
+
+</pre>
+
+</div>
+</section>
+<section>
+2<div class="outer outer-2">
+  <div class="inner inner-2">
+  水平居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-2{
+	text-align: center;
+}
+
+.inner-2{
+	display: inline-block;
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+3<div class="outer outer-3">
+  <div class="inner inner-3">
+  水平居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.inner-3{
+	width:fit-content;
+	margin:auto;
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+4<div class="outer outer-4">
+  <div class="inner inner-4">
+  垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-4{
+	display: table-cell;
+	vertical-align:middle;
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+5<div class="outer outer-5">
+  <div class="inner inner-5">
+  垂直居中
+</div>
+</div>
+
+<div class='code'>
+<pre>
+.outer-5{
+	line-height:300px;
+}
+
+
+.inner-5{
+	line-height:initial;
+	vertical-align:middle;
+	display:inline-block;
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+
+6<div class="outer outer-6">
+  <div class="inner inner-6">
+  垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-6::after{
+	content:'4345345';
+	vertical-align:middle;
+	display:inline-block;
+	height:100%;
+}
+.inner-6{
+	vertical-align:middle;
+	display:inline-block
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+7<div class="outer outer-7">
+  <div class="inner inner-7">
+  水平垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-7{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.inner-7{
+	
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+8<div class="outer outer-8">
+  <div class="inner inner-8">
+  水平垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-8{
+	display:grid;
+
+}
+.inner-8{
+	justify-self:center;
+	align-self:center;
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+9<div class="outer outer-9">
+  <div class="inner inner-9">
+  水平垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-9{
+	position:relative;
+
+}
+.inner-9{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%)
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+10<div class="outer outer-10">
+  <div class="inner inner-10">
+  水平垂直居中
+</div>
+</div>
+<div class='code'>
+<pre>
+.outer-10{
+	position:relative;
+
+}
+.inner-10{
+	position:absolute;
+	left:calc(50% - 50px);
+	top:calc(50% - 50px);
+	
+}
+</pre>
+
+</div>
+</section>
+<section>
+11<div class="outer outer-11">
+  <div class="inner inner-11">
+  水平垂直居中
+</div>
+</div>
+<div>
+<pre>
+.outer-11{
+	position:relative;
+
+}
+.inner-11{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-50px;
+	margin-top:-50px;
+	
+}
+
+</pre>
+
+</div>
+</section>
+<section>
+12<div class="outer outer-12">
+  <div class="inner inner-12">
+  水平垂直居中
+</div>
+</div>
+<div>
+<pre>
+.outer-12{
+	position:relative;
+
+}
+.inner-12{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	
+}
+
+</pre>
+
+</div>
+</section>
+
+
+
+        <script >
+		
+		
+
+		
+		</script>
+    </body>
+</html>
