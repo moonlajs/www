@@ -5,23 +5,23 @@
     <title>屋顶</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  
+    <!--<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
     <style>
         /* 屏蔽站长统计 */
         body > a {
             display: none;
         }
     </style>
-    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/text.min.js?1611908880067"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/artoolkit.min.js?1611908880067"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/atob.js?1611908880067"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/icreator.js?1611908880067"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/jszip.min.js?1611908880067"></script>
-    <script src="https://creatorosscdn.ddd.online/5.7.0/extend/app/bowser.js?1611908880067"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/text.min.js?1611908880067"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/artoolkit.min.js?1611908880067"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/atob.js?1611908880067"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/icreator.js?1611908880067"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/jszip.min.js?1611908880067"></script>
+    <script src="//creatorosscdn.ddd.online/5.7.0/extend/app/bowser.js?1611908880067"></script>
     <!--<script src="//creatorosscdn.ddd.online/5.7.0/extend/app/vconsole.min.js1611908880067"></script>-->
     <link href="https://creativewebosscdn.ddd.online/frontEndWebsite/favicon.ico" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_271071_tlc3es9vwqg.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_271071_tlc3es9vwqg.css">
     <!--<link rel="stylesheet"-->
     <!--href="//creatorosscdn.ddd.online/5.7.0/extend/app/template.css?1611908880067">-->
     <script>
@@ -43,19 +43,118 @@
       window.hideLoading = '$_hideLoading_$'
       window.showAd = '1'
     </script>
-<link href="https://creatorosscdn.ddd.online/5.7.0/assets/app.6747a771d2a007039ca4.css" rel="stylesheet"></head>
+<link href="//creatorosscdn.ddd.online/5.7.0/assets/app.6747a771d2a007039ca4.css" rel="stylesheet"></head>
 
 <body>
 <div id="embedContent">
-   <div id="projectDescribe" style="display: none">
+    <div id="projectDescribe" style="display: none">
         屋顶
     </div>
+    <div id="screenshotButton" class="screenshot-button" onclick="screenShot()" onmouseenter="showScreenShotArea()" onmouseleave="hideScreenShotArea()" style="display: none">
+        <i class="iconfont icon-paizhao screenshot-icon"></i>
+        <div class="screenshot-text">
+            保存封面
+        </div>
+    </div>
+    <div id="screenshotSave" class="screenshot-button" style="height: 32px;width: 81px;display: none">
+        <i class="iconfont icon-htmal5icon22 screenshot-icon"></i>
+        <div class="screenshot-text">
+            保存
+        </div>
+    </div>
+    <div id="coverPreview" class="cover-preview" style="visibility: hidden">
+        <div id="coverImage" alt="封面图" class="cover-image"></div>
+    </div>
+    <div id="operateLayer" class="product-operate-layer">
+        <div id="topOwnerInfo" class="top-owner-info" style="display: none">
+            <div class="product-owner-info" id="headInfo" style="display: none">
+                <div>
+                    <img id="head" src="" class="owner-head" onclick="jumpToProduct()">
+                </div>
+                <div id="ownerInfo" class="owner-info" onclick="jumpToProduct()" style="display: none">
+                    <div class="product-name">
+                        <nobr>
+                            屋顶-动动三维
+                        </nobr>
+                    </div>
+                    <div class="product-owner">
+                        <nobr>
+                            作者: 用户caTBMFMKA
+                        </nobr>
+                    </div>
+                </div>
+            </div>
+            <div class="top-button">
+                <div>
+                    <div class="product-button share" onclick="showShareLayer(true)" id="share" style="display: none">
+                        <i class="iconfont icon-fenxiang product-icon"></i>
+                    </div>
+                    <div class="product-button download" onclick="jumpToProduct()" id="download" style="display: none">
+                        <i class="iconfont icon-xiazai11 product-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="bottom-owner-info">
+            <div id="companyLogo" style="display: none">
+                <div id="companyLogoImage" class="company-logo" onclick="jumpToProduct()"></div>
+            </div>
+            <section class="icon-container">
+                <i id="stripe" class="iconfont icon-fenping fullscreen-button" style="display: none" onclick="openorHideStripeViewer()"></i>
+                <i id="fullscreenExpand" class="iconfont icon-quanping11 fullscreen-button" onclick="FullScreen()"></i>
+                <i id="fullscreenShrink" class="iconfont icon-tuichuquanping fullscreen-button" style="display: none" onclick="FullScreen()"></i>
+            </section>
+        </div>
+    </div>
+    <div id="photoMask" class="product-operate-layer photo" style="display: none"></div>
+    <div class="product-operate-layer share" id="shareLayer" style="display: none">
+        <div class="product-operate-layer mask"></div>
+        <i class="iconfont icon-guanbi1 icon-close" onclick="showShareLayer(false)"></i>
+        <div class="share-dialog">
+            <div class="share-dialog-body">
+                <div class="share-item">
+                    <div class="copy-link">
+                        <input type="text" readonly="readonly" id="shortLink">
+                        <p id="copy-link-btn" class="copy-link-btn" onclick="copyLink()" onmouseleave="changeCopyButton()">复制链接</p>
+                    </div>
+                </div>
+                <div class="share-item">
+                    <p class="share-item-label">分享至</p>
+                    <div class="share-plugin">
+
+                        <div class="icon">
+                            <i class="iconfont icon-qq share-icon" onclick="shareToqq()"></i>
+                            <i class="iconfont icon-weixin share-icon" onmouseenter="showORCode(true)" onmouseleave="showORCode(false)">
+                                    <span>
+                                        <div id="orcode" class="weixin-rqcode-frame" style="display: none">
+                                            <img id="orcodeImage" src="" alt="微信预览图片" class="weixin-rqcode">
+                                        </div>
+                                    </span>
+                            </i>
+                            <i class="iconfont icon-qqkongjian share-icon" onclick="shareToQzome()"></i>
+                            <i class="iconfont icon-weibo share-icon" onclick="shareToWeibo()"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ar-open-safari" class="ar-open-safari" style="display: none">
+        <div class="ar-open-button" onclick="closeOpenSafari()"></div>
+    </div>
+    <div id="ar-open-scan" class="ar-open-safari" style="display: none">
+        <div id="scan-bar" class="scan-bar"></div>
+        <div id="ar-scan-button" class="ar-scan-button" onclick="downloadMarker()"></div>
+        <div id="ar-toggle-button" class="ar-toggle-button"></div>
+    </div>
+    <div id="camera-ar-toggle-button" class="camera-ar-toggle-button" style="display: none"></div>
     <div id="app-content">
         <div id="app-container" style="">
         </div>
     </div>
 </div>
-<script type="text/javascript" src="ddd.house.app.js"></script></body>
+<!--<script src="//creatorosscdn.ddd.online/5.7.0/extend/app/template.js?1611908880067"></script>-->
+<script type="text/javascript" src="//creatorosscdn.ddd.online/5.7.0/assets/app.7007711a0440be05eba9.js"></script></body>
 
 </html>
