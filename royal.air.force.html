@@ -605,7 +605,7 @@ skyboxMaterial.disableLighting = true;
 skybox.material = skyboxMaterial;
 skybox.infiniteDistance = true;
 skyboxMaterial.disableLighting = true;
-skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/textures/skybox/TropicalSunnyDay", scene);
+skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("https://www.raf.mod.uk/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/textures/skybox/TropicalSunnyDay", scene);
 // #
 skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 // Add a camera to the scene and attach it to the canvas
@@ -633,7 +633,7 @@ return scene;
 /******* End of the create scene function ******/
 //Call the createScene function
 var scene = createScene();
-var loader = BABYLON.SceneLoader.Append("/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/models/REDS-MANOEUVRES/model/", manoeuvreModels[0], scene, function (scene) {
+var loader = BABYLON.SceneLoader.Append("https://www.raf.mod.uk/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/models/REDS-MANOEUVRES/model/", manoeuvreModels[0], scene, function (scene) {
 // #
 loader.compileMaterials = true;
 });
@@ -689,7 +689,7 @@ scene.render();
 });
 var doSPSSmoke = function () {
 var manouevreSmokeCfg = smokeCfg[manoeuvre];
-var texture = new BABYLON.Texture("/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/textures/smoke.png", scene);
+var texture = new BABYLON.Texture("https://www.raf.mod.uk/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/textures/smoke.png", scene);
 //#
 var mat = new BABYLON.StandardMaterial("mat", scene);
 mat.diffuseTexture = texture;
@@ -844,7 +844,7 @@ texture.dispose();
 scene.animationGroups.slice().reverse().forEach(function (animationGroup) {
 animationGroup.dispose();
 });
-var loader = BABYLON.SceneLoader.Append("/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/models/REDS-MANOEUVRES/model/", manoeuvreModels[manoeuvre], scene, function (scene) {
+var loader = BABYLON.SceneLoader.Append("https://www.raf.mod.uk/sites/raf-beta/themes/raf-beta/content_types/Page_Equipment/3d_aircraft_recognition/RAF-3D-models/models/REDS-MANOEUVRES/model/", manoeuvreModels[manoeuvre], scene, function (scene) {
 // #
 loader.compileMaterials = true;
 camera = scene.cameras[0];
