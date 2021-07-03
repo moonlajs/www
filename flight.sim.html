@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>BabylonJS Flight Simulator</title>
+      <style>
+        html, body {
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        #renderCanvas {
+          width: 100%;
+          height: 100%;
+          touch-action: none;
+        }
+        #fps {
+          position: absolute;
+          right : 10px;
+          top: 10px;
+          border-radius: 3px;
+          display: inline-block;
+          padding: 2px 4px;
+          font-weight: bold;
+          font-size: 11.844px;
+          color: white;
+          background-color: #999;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script src="http://jerome.bousquie.fr/BJS/Babylon.js/dist/preview%20release/babylon.js"></script>
+    <script src="http://jerome.bousquie.fr/BJS/Babylon.js/dist/preview release/gui/babylon.gui.js"></script>
+    <script src="http://jerome.bousquie.fr/BJS/Extensions/DynamicTerrain/dist/babylon.dynamicTerrain.js"></script>
+    <script src="js/flight.sim.hand.js"></script>
+    <!--<script src="perlin.js"></script>-->
+    <script src="s/flightSim.sim.js"></script>
+   </head>
+   <body>
+    <canvas id="renderCanvas"></canvas>
+    <span id="fps">60 fps</span>
+    <script>
+      window.onload = init;
+    </script>
+   </body>
+</html>
