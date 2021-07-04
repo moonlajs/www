@@ -35,7 +35,7 @@ var createScene = function(canvas, engine) {
     scene.fogDensity = fogDensity;
     
     // Texture and material
-    var url = "http://jerome.bousquie.fr/BJS/images/earthDouble.png";
+    var url = "img/earthDouble.png";
     var terrainTexture = new BABYLON.Texture(url, scene);
     
     var terrainMaterial = new BABYLON.StandardMaterial("tm", scene);
