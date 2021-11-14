@@ -1,0 +1,78 @@
+
+
+
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>本地网页</title>
+		<style type="text/css">
+		
+		body{
+	
+		 
+		
+		}
+		
+		
+		.height-full{
+		height: 100% !important;
+		}
+		.bg-gray-dark-mktg {
+			background-color: #040d21
+		}
+		.d-flex {
+			display: flex !important;
+		}
+		.overflow-hidden {
+			overflow: hidden !important;
+		}
+		.position-relative {
+			position: relative !important;
+		}
+		.flex-auto {
+			flex: auto !important;
+		}
+		.flex-column {
+			flex-direction: column !important;
+		}
+		.signup-bg-stars {
+			z-index: -200;
+			width: 1px;
+			height: 1px;
+			background: transparent;
+			box-shadow: 20px 408px rgba(255,255,255,.2), 821px 1296px #FFF, 612px 1425px #FFF, 1818px 777px #FFF, 337px 1698px #FFF, 1126px 1204px #FFF, 447px 1498px #FFF, 1234px 1891px #FFF, 780px 952px #FFF, 1979px 360px #FFF, 1337px 142px #FFF, 391px 417px #FFF, 1673px 733px #FFF, 1568px 123px #FFF, 1918px 850px #FFF, 482px 194px #FFF, 728px 726px #FFF, 1734px 1761px #FFF, 1479px 1557px #FFF, 434px 1037px #FFF, 1044px 1086px #FFF, 884px 607px #FFF, 1692px 1786px #FFF, 1443px 701px #FFF, 1566px 1805px #FFF, 1338px 1100px #FFF, 1007px 211px #FFF, 1559px 316px #FFF, 1762px 1930px #FFF, 89px 81px #FFF, 1354px 1277px #FFF, 847px 1859px #FFF, 1241px 206px #FFF, 668px 466px #FFF, 949px 93px #FFF, 1755px 1790px #FFF, 864px 372px #FFF, 729px 633px #FFF, 341px 1259px #FFF, 1601px 340px #FFF, 70px 1142px #FFF, 685px 1966px #FFF, 1433px 1220px #FFF, 259px 83px #FFF, 636px 1795px #FFF, 1734px 1804px #FFF, 698px 1603px #FFF, 1892px 343px #FFF, 382px 801px #FFF, 984px 502px #FFF, 319px 892px #FFF, 353px 672px #FFF, 1887px 657px #FFF, 1354px 778px #FFF, 691px 1278px #FFF, 78px 1799px #FFF, 738px 1599px #FFF, 342px 105px #FFF, 1671px 1201px #FFF, 802px 360px #FFF, 1133px 706px #FFF, 862px 1411px #FFF, 1699px 974px #FFF, 1057px 431px #FFF, 610px 1998px #FFF, 1472px 1091px #FFF, 234px 485px #FFF, 1551px 1973px #FFF, 294px 1471px #FFF, 542px 671px #FFF;
+			animation: animStar 100s linear infinite;
+		}
+
+		.signup-bg-stars::after {
+			position: absolute;
+			top: 2000px;
+			width: 1px;
+			height: 1px;
+			content: " ";
+			background: transparent;
+			border-radius: 10px;
+			box-shadow: 20px 408px rgba(255,255,255,.2), 821px 1296px #FFF, 612px 1425px #FFF, 1818px 777px #FFF, 337px 1698px #FFF, 1126px 1204px #FFF, 447px 1498px #FFF, 1234px 1891px #FFF, 780px 952px #FFF, 1979px 360px #FFF, 1337px 142px #FFF, 391px 417px #FFF, 1673px 733px #FFF, 1568px 123px #FFF, 1918px 850px #FFF, 482px 194px #FFF, 728px 726px #FFF, 1734px 1761px #FFF, 1479px 1557px #FFF, 434px 1037px #FFF, 1044px 1086px #FFF, 884px 607px #FFF, 1692px 1786px #FFF, 1443px 701px #FFF, 1566px 1805px #FFF, 1338px 1100px #FFF, 1007px 211px #FFF, 1559px 316px #FFF, 1762px 1930px #FFF, 89px 81px #FFF, 1354px 1277px #FFF, 847px 1859px #FFF, 1241px 206px #FFF, 668px 466px #FFF, 949px 93px #FFF, 1755px 1790px #FFF, 864px 372px #FFF, 729px 633px #FFF, 341px 1259px #FFF, 1601px 340px #FFF, 70px 1142px #FFF, 685px 1966px #FFF, 1433px 1220px #FFF, 259px 83px #FFF, 636px 1795px #FFF, 1734px 1804px #FFF, 698px 1603px #FFF, 1892px 343px #FFF, 382px 801px #FFF, 984px 502px #FFF, 319px 892px #FFF, 353px 672px #FFF, 1887px 657px #FFF, 1354px 778px #FFF, 691px 1278px #FFF, 78px 1799px #FFF, 738px 1599px #FFF, 342px 105px #FFF, 1671px 1201px #FFF, 802px 360px #FFF, 1133px 706px #FFF, 862px 1411px #FFF, 1699px 974px #FFF, 1057px 431px #FFF, 610px 1998px #FFF, 1472px 1091px #FFF, 234px 485px #FFF, 1551px 1973px #FFF, 294px 1471px #FFF, 542px 671px #FFF;
+			opacity: .7
+		}
+		
+		
+		@keyframes animStar{
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-2000px);
+		}
+		}
+		</style>
+	</head>
+	<body class=" height-full bg-gray-dark-mktg  " style="">
+    
+
+	  <div class="signup-bg-stars"></div>
+
+	</body>
+</html>
